@@ -1,0 +1,37 @@
+--- # Start
+
+--- # change port
+server:
+  port: 8085
+
+--- # Thymeleaf
+spring:
+  thymeleaf:
+    cache: false # ?? ?? reload
+    #    prefix: file:src/main/resources/templates # classpath:/templates
+    prefix: classpath:/templates/
+    suffix: .html
+
+--- # mariadb
+#spring:
+#  datasource:
+#    driver-class-name: org.mariadb.jdbc.Driver
+#    url: jdbc:mariadb://121.0.0.1/study
+#    username: root
+#    password: dkaso@123
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/boot_study
+    username: root
+    password: dkaso@123
+
+--- #
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: none #update
+    properties:
+      hibernate:
+        show_sql : true
+        format_sql: true

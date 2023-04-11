@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>welcome home</h1>
+<!--    <form id="frmForm" name="frmForm" action="/user/save" method="POST">-->
+        <input type="text" title="이메일" id="email" name="email">
+        <input type="text" title="이름" id="name" name="name">
+        <button type="submit" class="ui-button" id="btn_save">버튼</button>
+<!--    </form>-->
+</body>
+
+<script>
+    document.getElementById("btn_save").onclick = () => {
+        let email = document.getElementById("email").value;
+        let name = document.getElementById("name").value;
+        const data = {name: name, email: email};
+        console.log("111..............................................................");
+        // console.log(data);
+        console.log("222..............................................................");
+
+        const url = "/user/save";
+        fetch(url, { method:"POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(data)})
+        // fetch(url, { method:"POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({name : name, email : email})})
+            .then((response) => response.json())
+            .then((json) => console.log(json))
+            .catch((error) => console.log(error));
+        Promise.call()
+    };
+</script>
+</html>
