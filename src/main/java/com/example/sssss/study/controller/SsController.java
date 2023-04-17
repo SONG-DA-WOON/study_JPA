@@ -1,4 +1,4 @@
-package com.example.sssss.controller;
+package com.example.sssss.study.controller;
 
 import com.example.sssss.common.JSONResponse;
 import lombok.AllArgsConstructor;
