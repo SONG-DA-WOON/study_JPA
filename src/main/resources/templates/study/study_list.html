@@ -32,6 +32,7 @@
       <div class="col" th:text="${list.getStudy_day()}">2022.07.20</div>
       <div class="col" th:text="${list.getContents()}">공부하자7</div>
       <div class="col" th:text="${#temporals.format(list.getReg_day(), 'yyyy-MM-dd hh:mm')}">2022.07.20 16:44</div>
+<!--      <div class="col" th:text="${list.reg_day}">2022.07.20 16:44</div>-->
  <!-- 송다운 방법 :  <div class="col"><a th:href="@{/study/modify/{id}(id=${list.getKey_id()})}">수정</a></div>-->
       <div class="col"><a th:href="@{/study/modify(key_id=${list.getKey_id()})}">수정</a></div>
       <div class="col"><a th:href="@{/study/delete(key_id=${list.getKey_id()})}">삭제</a></div>

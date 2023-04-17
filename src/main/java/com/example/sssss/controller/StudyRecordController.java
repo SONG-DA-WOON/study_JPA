@@ -45,12 +45,15 @@ public class StudyRecordController {
     @PostMapping("/study/insert_exe")
     public String doInsExe(@ModelAttribute Study_record studyRecord) {
 
-        studyRecord.setReg_day(LocalDateTime.now());
+//        studyRecord.setReg_day(LocalDateTime.now());
+//        studyRecord.setMod_day(LocalDateTime.now());
         studyRecordService.doInsert(studyRecord);
 
         return "redirect:/study/list";
     }
 
+
+    // *****************************************************************************************************************
     // 송다운 방법
 //    @GetMapping("/study/modify/{id}")
 //    public String modifyStudy(@PathVariable("id") Long id, Model model) {
@@ -60,6 +63,8 @@ public class StudyRecordController {
 //        model.addAttribute("detail", studyRecord);
 //        return "study/study_mod";
 //    }
+    // *****************************************************************************************************************
+
 
     @GetMapping("/study/modify")
     public String doMod(HttpServletRequest request, Model model) {
@@ -76,6 +81,7 @@ public class StudyRecordController {
     @PostMapping("/study/modify_exe")
     public String modifyStudyExe(@ModelAttribute Study_record studyRecord) {
 
+//        studyRecord.setMod_day(LocalDateTime.now());
         studyRecordService.doUpdate(studyRecord);
 
         return "redirect:/study/list";
