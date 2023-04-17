@@ -26,15 +26,16 @@
       <div class="col">삭제</div>
     </div>
 
-
-    <div class="row mb-2" th:each="list : ${list}">
-      <div class="col" th:text="${list.key_id}">1009</div>
-      <div class="col" th:text="${list.study_day}">2022.07.20</div>
-      <div class="col" th:text="${list.contents}">공부하자7</div>
-      <div class="col" th:text="${#temporals.format(list.reg_day, 'yyyy-MM-dd hh:mm')}">2022.07.20 16:44</div>
-      <div class="col"><a href="/study/modify?key_id=1009">수정</a></div>
+  <th:block  th:each="list : ${list}">
+    <div class="row mb-2">
+      <div class="col" th:text="${list.getKey_id()}">1009</div>
+      <div class="col" th:text="${list.getStudy_day()}">2022.07.20</div>
+      <div class="col" th:text="${list.getContents()}">공부하자7</div>
+      <div class="col" th:text="${#temporals.format(list.getReg_day(), 'yyyy-MM-dd hh:mm')}">2022.07.20 16:44</div>
+      <div class="col"><a th:href="@{/study/modify/(id=${list.getKey_id()})}">수정</a></div>
       <div class="col"><a href="/study/delete?key_id=1009">삭제</a></div>
     </div>
+  </th:block>
 
   </div>
 

@@ -19,18 +19,18 @@ import java.io.InputStreamReader;
 @Controller
 public class SsController {
 
-    @GetMapping("/")
-    public String home() {
-        log.info("SsController home called...................................");
-        return "redirect:/user/home";
-    }
-
-    @GetMapping("/user/home")
-    public String realHome() {
-        log.info("SsController realHome called...................................");
-
-        return "user/home";
-    }
+//    @GetMapping("/")
+//    public String home() {
+//        log.info("SsController home called...................................");
+//        return "redirect:/user/home";
+//    }
+//
+//    @GetMapping("/user/home")
+//    public String realHome() {
+//        log.info("SsController realHome called...................................");
+//
+//        return "user/home";
+//    }
 
 
 // www.daleseo.com/js-window-fetch/
