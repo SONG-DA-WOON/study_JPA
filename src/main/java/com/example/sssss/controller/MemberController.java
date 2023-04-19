@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -34,6 +35,14 @@ public class MemberController {
     public String doInsertExe(@ModelAttribute Study_member studyMember) {
 
         studyMemberService.doInsert(studyMember);
+
+        return "redirect:/member/list";
+    }
+
+    // 삭제
+    @GetMapping("/member/delete")
+    public String deleteMember(@RequestParam(value = "key_id", defaultValue = "--") String strMemberId) {
+        studyMemberService.doDelete(Long.valueOf(strMemberId));
 
         return "redirect:/member/list";
     }

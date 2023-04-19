@@ -32,7 +32,7 @@
       <div class="col" th:text="${list.role}">MEMBER</div>
       <div class="col" th:text="${list.email}">EMAIL</div>
       <div class="col" th:text="${#temporals.format(list.regDay, 'yyyy-MM-dd hh:mm')}">2022.07.19 08:29</div>
-      <div class="col"><a href="/member/delete?key_id=1">삭제</a></div>
+      <div class="col"><a th:href="@{/member/delete(key_id=${list.getMemberId()})}">삭제</a></div>
     </div>
 
   </div>
