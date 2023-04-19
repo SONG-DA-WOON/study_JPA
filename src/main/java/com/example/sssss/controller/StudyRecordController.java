@@ -72,9 +72,9 @@ public class StudyRecordController {
 
         Study_record studyRecord = studyRecordService.doSelectOne(Long.valueOf(strKeyId));
 
-//        request.setAttribute("detail", studyRecord);
+        request.setAttribute("detail", studyRecord);
 
-        model.addAttribute("detail", studyRecord);
+//        model.addAttribute("detail", studyRecord);
         return "study/study_mod";
     }
 
