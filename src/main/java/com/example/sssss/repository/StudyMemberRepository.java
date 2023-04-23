@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface StudyMemberRepository extends JpaRepository<Study_member, Long> {
+
+    Study_member findByLoginId(String loginId);
 }

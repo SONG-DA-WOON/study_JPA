@@ -18,7 +18,7 @@ public class MemberController {
     private StudyMemberService studyMemberService;
 
     @GetMapping("/member/list")
-    public String memberSignUp(Model model) {
+    public String memberSignUp(Model model) throws Exception {
         List<Study_member> list = studyMemberService.doSelectAll();
         model.addAttribute("list", list);
         return "member/member_list";
@@ -32,7 +32,7 @@ public class MemberController {
 
     // 회원가입
     @PostMapping("/member/insert_exe")
-    public String doInsertExe(@ModelAttribute Study_member studyMember) {
+    public String doInsertExe(@ModelAttribute Study_member studyMember) throws Exception {
 
         studyMemberService.doInsert(studyMember);
 
